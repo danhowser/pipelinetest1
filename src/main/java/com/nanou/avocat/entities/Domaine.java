@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class Domaine implements Serializable{
 	 @Id
 	 @GeneratedValue(strategy=GenerationType.IDENTITY)
-	 private int idDomaine;
+	 private Long idDomaine;
 	private String nomDomaine;
 	 @ManyToMany
 	 @JoinTable(joinColumns=@JoinColumn(name="idDomaine"), inverseJoinColumns=@JoinColumn(name="idAvocat"))

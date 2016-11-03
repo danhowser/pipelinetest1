@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class Ville implements Serializable{
 	 @Id
 	 @GeneratedValue(strategy=GenerationType.IDENTITY)
-	 private int idVille;
+	 private Long idVille;
 	 private String nomVille;
 	 @OneToMany(mappedBy="ville")
 	 private List<Avocat> listAvocat;

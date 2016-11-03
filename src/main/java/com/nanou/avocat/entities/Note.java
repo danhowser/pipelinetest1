@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Note implements Serializable{
 	 @Id
 	 @GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int idNote;
+	private Long idNote;
 	private int note;
 	private String descriptioNote;
 	private boolean approbation;
@@ -36,7 +36,7 @@ public class Note implements Serializable{
 	public void setApprobation(boolean approbation) {
 		this.approbation = approbation;
 	}
-	public int getIdNote() {
+	public Long getIdNote() {
 		return idNote;
 	}
 	
