@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Message implements Serializable{
 	 @Id
 	 @GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int idMessage;
+	private Long idMessage;
 	 private LocalDate dateMessage;
 	private String message;
 	 @ManyToOne
@@ -38,7 +38,7 @@ public class Message implements Serializable{
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	public int getIdMessage() {
+	public Long getIdMessage() {
 		return idMessage;
 	}
 	public Message() {

@@ -5,25 +5,25 @@ import com.nanou.avocat.entities.*;
 public interface IAvocatDAO {
 	  public Long ajouterAvocat(Avocat a);
 	  public void updateAvocat(Avocat a);
-	  public void deleteAvocat(long id);
-	  public List<Avocat> avocatParVille(Long idVille);
-	  public List<Avocat> avocatParDomaine(Long idDomaine);
+	  public void deleteAvocat(Long id);
+	  public List<Avocat> avocatParVille(String nomVille);
+	  public List<Avocat> avocatParDomaine(String nomDomaine);
 	  public List<Avocat> avocatParNom(String nom);
 	  public List<Avocat> listAvocat();
 	  
 	  
 	  public Long ajouterUser(Utilisateur a);
 	  public void updateUser(Utilisateur a);
-	  public void deleteUser(long id);
-	  public List<Avocat> userParNom(String nom);
-	  public List<Avocat> userParMail(String mail);
-	  public List<Avocat> listUser();
+	  public void deleteUser(Long id);
+	  public List<Utilisateur> userParNom(String nom);
+	  public Utilisateur userParMail(String mail);
+	  public List<Utilisateur> listUser();
 	  
 	  
-	  public void ajouterMessage(Message m);
+	  public Long ajouterMessage(Message m);
 	  public List<Message> messageParUser(Long idUser);
-	  public List<Avocat> messageParAvocat(Long idAvocat);
-	  public List<Avocat> listMessage();
+	  public List<Message> messageParAvocat(Long idAvocat);
+	  public List<Message> listMessage();
 	  
 	  
 	  public void updateReview(Note n);
