@@ -15,7 +15,7 @@ public class Avocat implements Serializable{
    //information avocat
 	 @Id
 	 @GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long idAvocat;
+	private Long idAvocat;
 	private String nomAvocat;
 	private String prenomAvocat;
 	private String adresseAvocat;
@@ -27,6 +27,7 @@ public class Avocat implements Serializable{
 	private String diplome;
 	private LocalDate startedPractice;
 	private String description;
+	private double noteGlobal;
 	 @OneToMany(mappedBy="avocat")
 	private List<Facture> listFacture;
 	 @ManyToMany(mappedBy="listAvocat")

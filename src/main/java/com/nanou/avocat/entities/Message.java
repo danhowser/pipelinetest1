@@ -1,7 +1,7 @@
 package com.nanou.avocat.entities;
 
 import java.io.*;
-
+import java.time.*;
 import javax.persistence.*;
 
 
@@ -10,6 +10,7 @@ public class Message implements Serializable{
 	 @Id
 	 @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idMessage;
+	 private LocalDate dateMessage;
 	private String message;
 	 @ManyToOne
 	 @JoinColumn(name="idAvocat")
@@ -49,8 +50,17 @@ public class Message implements Serializable{
 		this.message = message;
 		this.avocat = avocat;
 		this.utilisateur = utilisateur;
+		dateMessage=LocalDate.now();
 		
 	}
+	public LocalDate getDateMessage() {
+		return dateMessage;
+	}
+	public void setDateMessage(LocalDate dateMessage) {
+		this.dateMessage = dateMessage;
+	}
+	
+	
 	
 	
 	
