@@ -12,7 +12,7 @@ public class Utilisateur implements Serializable{
 	//info client
 	 @Id
 	 @GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long idClient;
+	private Long idClient;
 	private String nomClient;
 	private String prenomClient;
 	//private int ageClient;
@@ -23,6 +23,7 @@ public class Utilisateur implements Serializable{
 	private List<Message> listMessage;
 	
 	//info connection
+	 @Column(unique=true)
 	private String emailClient;
 	private String motDePasse;
 	
@@ -46,7 +47,7 @@ public class Utilisateur implements Serializable{
 		this.prenomClient = prenomClient;
 	}
 
-	public long getIdClient() {
+	public Long getIdClient() {
 		return idClient;
 	}
 	public String getTelClient() {

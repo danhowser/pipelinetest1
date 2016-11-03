@@ -43,5 +43,9 @@
 <tx:annotation-driven transaction-manager="transactionManager"/>
 <context:annotation-config></context:annotation-config>
 
+<bean id="dao" class="com.nanou.avocat.DAO.AvocatDaoImpl"></bean>
+<bean id="metier" class="com.nanou.avocat.metier.AvocatMetierImpl">
+  <property name="dao" ref="dao"></property>
+</bean>
 
 </beans>
