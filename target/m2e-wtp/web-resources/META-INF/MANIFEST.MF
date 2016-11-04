@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: beboucha
 Build-Jdk: 1.8.0_45
+=======
+Built-By: pc
+Build-Jdk: 1.8.0_91
+>>>>>>> 81e608e20514339d2b8ca6eedc0f392f4390968e
 Created-By: Maven Integration for Eclipse
 

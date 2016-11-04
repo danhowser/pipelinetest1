@@ -1,7 +1,11 @@
 package com.nanou.avocat.DAO;
 import java.util.*;
+
+import org.springframework.transaction.annotation.Transactional;
+
 import com.nanou.avocat.entities.*;
 
+@Transactional
 public interface IAvocatDAO {
 	  public Long ajouterAvocat(Avocat a);
 	  public void updateAvocat(Avocat a);

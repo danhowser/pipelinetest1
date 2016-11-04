@@ -13,8 +13,13 @@ import com.nanou.avocat.entities.Message;
 import com.nanou.avocat.entities.Note;
 import com.nanou.avocat.entities.Utilisateur;
 import com.nanou.avocat.entities.Ville;
+<<<<<<< HEAD
 @Transactional
 public class AvocatMetierImpl implements IAvocatMetier{
+=======
+
+public class AvocatMetierImpl implements IAdminMetier{
+>>>>>>> 81e608e20514339d2b8ca6eedc0f392f4390968e
 	
 	private IAvocatDAO dao;
 	
@@ -25,7 +30,6 @@ public class AvocatMetierImpl implements IAvocatMetier{
 
 	@Override
 	public Long ajouterAvocat(Avocat a) {
-		
 		return dao.ajouterAvocat(a);
 	}
 
