@@ -2,6 +2,8 @@ package com.nanou.avocat.metier;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import com.nanou.avocat.DAO.IAvocatDAO;
 import com.nanou.avocat.entities.Avocat;
 import com.nanou.avocat.entities.Domaine;
@@ -11,7 +13,7 @@ import com.nanou.avocat.entities.Message;
 import com.nanou.avocat.entities.Note;
 import com.nanou.avocat.entities.Utilisateur;
 import com.nanou.avocat.entities.Ville;
-
+@Transactional
 public class AvocatMetierImpl implements IAvocatMetier{
 	
 	private IAvocatDAO dao;

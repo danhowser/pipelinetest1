@@ -2,6 +2,8 @@ package com.nanou.avocat;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -19,8 +21,13 @@ public class TestJPA {
 			ClassPathXmlApplicationContext context=
 		new ClassPathXmlApplicationContext(new String[]{"applicationContext.xml"});
 			IAvocatMetier metier=(IAvocatMetier) context.getBean("metier");
-			Long l=metier.ajouterUser(new Utilisateur("dab", "h", "r", "g", "e"));
-			System.out.println(l);
+			List<Utilisateur> use1=metier.listUser();
+			metier.ajouterUser(new Utilisateur("dab", "h", "r", "g", "e"));
+			metier.ajouterUser(new Utilisateur("dab", "h", "r", "g", "e"));
+			List<Utilisateur> use2=metier.listUser();
+			System.out.println(use1.get(0).getDateCreation());
+			assertTrue(use1.size()+2==use2.size());
+			
 			
 			}
 			catch(Exception e){
