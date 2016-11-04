@@ -10,7 +10,7 @@ import javax.validation.constraints.Size;
 public class Avocat implements Serializable{
 	
 	
-	// manque photo et coordonées
+	// manque photo et coordonï¿½es
 	
    //information avocat
 	 @Id
@@ -185,6 +185,11 @@ public class Avocat implements Serializable{
 	}
 	public Avocat() {
 		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Avocat(String nomAvocat) {
+		super();
+		this.nomAvocat = nomAvocat;
 		// TODO Auto-generated constructor stub
 	}
 	public Avocat(String nomAvocat, String prenomAvocat, String adresseAvocat, String adresseAvocat2, String telCabinet,

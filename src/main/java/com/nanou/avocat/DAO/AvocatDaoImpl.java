@@ -53,7 +53,7 @@ public class AvocatDaoImpl implements IAvocatDAO {
 
 	@Override
 	public List<Avocat> avocatParNom(String nom) {
-		Query req=em.createQuery("select a from Avocat a where a.nomAvocat like :x");
+		Query req=em.createQuery("select a from Avocat a where a.nomAvocat like :x or a.prenomAvocat like :x");
 		req.setParameter("x", "%"+nom+"%");
 		return req.getResultList();
 	}
