@@ -10,8 +10,7 @@ public class Langue implements Serializable{
 	 @GeneratedValue(strategy=GenerationType.IDENTITY)
 	 private int idLangue;
 	private String nomLangue;
-	 @ManyToMany
-	 @JoinTable(joinColumns=@JoinColumn(name="idLangue"), inverseJoinColumns=@JoinColumn(name="idAvocat"))
+	 @ManyToMany(fetch = FetchType.EAGER, mappedBy="listLangue", cascade = CascadeType.ALL)
 	private List<Avocat> listAvocat;
 
 	public String getNomLangue() {

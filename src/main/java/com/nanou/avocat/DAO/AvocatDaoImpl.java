@@ -173,4 +173,41 @@ public class AvocatDaoImpl implements IAvocatDAO {
 		return req.getResultList();
 	}
 
+	@Override
+	public List<Avocat> avocatParNomEtVille(String nom, String nomVille) {
+		Query req=em.createQuery("select a from Avocat a where a.nomAvocat=:x AND a.ville.nomVille=:y");
+		req.setParameter("x", nom);
+		req.setParameter("y", nomVille);
+		
+		return req.getResultList();
+	}
+
+	@Override
+	public List<Avocat> avocatParNomEtDomaine(String nom, String nomDomaine) {
+		Query req=em.createQuery("select  a from Domaine d join d.listAvocat a where a.nomAvocat=:x AND d.nomDomaine=:y");
+		req.setParameter("x", nom);
+		req.setParameter("y", nomDomaine);
+		
+		return req.getResultList();
+	}
+
+	@Override
+	public List<Avocat> avocatParNomEtVilleEtDomaine(String nom, String nomVille, String nomDomaine) {
+		Query req=em.createQuery("select a from Domaine d join d.listAvocat a  where a.nomAvocat=:x AND a.ville.nomVille=:y AND d.nomDomaine=:z");
+		req.setParameter("x", nom);
+		req.setParameter("y", nomVille);
+		req.setParameter("z", nomDomaine);
+		
+		return req.getResultList();
+	}
+
+	@Override
+	public List<Avocat> avocatParVilleEtDomaine(String nomVille, String nomDomaine) {
+		Query req=em.createQuery("select a from Domaine d join d.listAvocat a where d.nomDomaine=:x AND a.ville.nomVille=:y");
+		req.setParameter("x", nomDomaine);
+		req.setParameter("y", nomVille);
+		
+		return req.getResultList();
+	}
+
 }

@@ -30,9 +30,11 @@ public class Avocat implements Serializable{
 	private double noteGlobal;
 	 @OneToMany(mappedBy="avocat")
 	private List<Facture> listFacture;
-	 @ManyToMany(mappedBy="listAvocat")
+	 @ManyToMany(fetch = FetchType.EAGER)
+	 @JoinTable(joinColumns=@JoinColumn(name="idAvocat"), inverseJoinColumns=@JoinColumn(name="idLangue"))
 	private List<Langue> listLangue;
-	 @ManyToMany(mappedBy="listAvocat")
+	 @ManyToMany(fetch = FetchType.EAGER)
+	 @JoinTable(joinColumns=@JoinColumn(name="idAvocat"), inverseJoinColumns=@JoinColumn(name="idDomaine"))
 	private List<Domaine> listDomaine;
 	 @OneToMany(mappedBy="avocat")
 	private List<Horaire> listHoraire;
