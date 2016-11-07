@@ -46,7 +46,8 @@ public class AvocatDaoImpl implements IAvocatDAO {
 
 	@Override
 	public List<Avocat> avocatParDomaine(String nomDomaine) {
-		Query req=em.createQuery("select d.listAvocat from Domaine d where d.nomDomaine=:x ");
+		Query req=em.createQuery("select a from Domaine d join d.listAvocat a WHERE d.nomDomaine= :x ");
+				//"select d.listAvocat from Domaine d where d.nomDomaine=:x ");
 		req.setParameter("x", nomDomaine);
 		return req.getResultList();
 	}

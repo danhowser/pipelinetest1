@@ -12,7 +12,7 @@ import com.nanou.avocat.entities.Note;
 import com.nanou.avocat.entities.Utilisateur;
 import com.nanou.avocat.entities.Ville;
 
-public class AvocatMetierImpl implements IAdminMetier{
+public class AvocatMetierImpl implements IAvocatMetier{
 	
 	private IAvocatDAO dao;
 	
