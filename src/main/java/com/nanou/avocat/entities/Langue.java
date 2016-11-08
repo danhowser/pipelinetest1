@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class Langue implements Serializable{
 	 @Id
 	 @GeneratedValue(strategy=GenerationType.IDENTITY)
-	 private int idLangue;
+	 private Long idLangue;
 	private String nomLangue;
 	 @ManyToMany(fetch = FetchType.EAGER, mappedBy="listLangue", cascade = CascadeType.ALL)
 	private List<Avocat> listAvocat;

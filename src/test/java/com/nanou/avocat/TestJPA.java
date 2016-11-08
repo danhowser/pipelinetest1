@@ -41,7 +41,11 @@ public class TestJPA {
 			Domaine domm=metier.listDomaine().get(1);
 			Domaine dommm=metier.listDomaine().get(2); 
 			
-			Avocat a1=new Avocat("gharibi","","","","","","","","",LocalDate.now(),"","","",kenitra);
+			Langue lan=metier.listLangue().get(0);
+			Langue lann=metier.listLangue().get(1);
+			Langue lannn=metier.listLangue().get(2);
+			
+		/*	Avocat a1=new Avocat("gharibi","","","","","","","","",LocalDate.now(),"","","",kenitra);
 			List<Domaine> list1=new ArrayList<Domaine>(); list1.add(dom); list1.add(domm);
 			//List<Avocat> lista=new ArrayList<Avocat>(); lista.add(a1); 
 			a1.setListDomaine(list1);
@@ -55,11 +59,11 @@ public class TestJPA {
 			
 			Avocat a3=new Avocat("dbiba","","","","","","","","",LocalDate.now(),"","","",kenitra);
 			List<Domaine> list3=new ArrayList<Domaine>(); list3.add(dom); 
-			a3.setListDomaine(list3); 
+			a3.setListDomaine(list3);  
 			
 			
 			
-			metier.ajouterAvocat(a1); metier.ajouterAvocat(a2); metier.ajouterAvocat(a3); 
+			metier.ajouterAvocat(a1); metier.ajouterAvocat(a2); metier.ajouterAvocat(a3); */
 			
 		//	List<Avocat> av=metier.avocatParNomEtDomaine("dbiba", "droit de travail");
 		//	System.out.println(av.get(0).getNomAvocat()); 
@@ -76,22 +80,22 @@ public class TestJPA {
 				System.out.println(av.get(0).getNomAvocat());
 				System.out.println(av.get(1).getNomAvocat()); */
 			
+		/*	Avocat a1=metier.listAvocat().get(0);
+				System.out.println(a1.getListDomaine().get(0).getNomDomaine());
+				List<Domaine> list=a1.getListDomaine();
+				list.add(dommm);
+		        a1.setListDomaine(list);  
+			//	a1.setListDomaine(list1);
+				//domm.getListAvocat().add(a1);
+		        metier.updateAvocat(a1);
+				System.out.println(a1.getListDomaine().get(2).getNomDomaine());
+				
+				
+		//		System.out.println(metier.listAvocat().get(0).getListDomaine().get(0).getNomDomaine());
+		//		System.out.println(metier.listAvocat().get(0).getListDomaine().get(1).getNomDomaine());    */
 			
-	/*		Avocat a1=metier.listAvocat().get(0);
-			System.out.println(a1.getListDomaine().get(0).getNomDomaine());
-			List<Domaine> list=a1.getListDomaine();
-		//	list.add(dommm);
-	    //    a1.setListDomaine(list);  
-		//	a1.setListDomaine(list1);
-			//domm.getListAvocat().add(a1);
-			System.out.println(a1.getListDomaine().get(1).getNomDomaine());
-			metier.updateAvocat(a1);
-			
-			System.out.println(metier.listAvocat().get(0).getListDomaine().get(0).getNomDomaine());
-			System.out.println(metier.listAvocat().get(0).getListDomaine().get(2).getNomDomaine());    */
-			
-			
-			
+			Avocat a1=metier.listAvocat().get(0);
+			System.out.println(a1.getListLangue().get(1).getNomLangue());
 			
 			
 			
