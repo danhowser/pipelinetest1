@@ -10,8 +10,7 @@ public class Domaine implements Serializable{
 	 @GeneratedValue(strategy=GenerationType.IDENTITY)
 	 private Long idDomaine;
 	private String nomDomaine;
-	 @ManyToMany
-	 @JoinTable(joinColumns=@JoinColumn(name="idDomaine"), inverseJoinColumns=@JoinColumn(name="idAvocat"))
+	 @ManyToMany(fetch = FetchType.EAGER, mappedBy="listDomaine", cascade = CascadeType.ALL)
 	private List<Avocat> listAvocat;
 	
 	public String getNomDomaine() {

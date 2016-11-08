@@ -13,6 +13,10 @@ public interface IAvocatDAO {
 	  public List<Avocat> avocatParVille(String nomVille);
 	  public List<Avocat> avocatParDomaine(String nomDomaine);
 	  public List<Avocat> avocatParNom(String nom);
+	  public List<Avocat> avocatParNomEtVille(String nom, String nomVille);
+	  public List<Avocat> avocatParNomEtDomaine(String nom, String nomDomaine);
+	  public List<Avocat> avocatParNomEtVilleEtDomaine(String nom, String nomVille, String nomDomaine);
+	  public List<Avocat> avocatParVilleEtDomaine(String nomVille, String nomDomaine);
 	  public List<Avocat> listAvocat();
 	  
 	  

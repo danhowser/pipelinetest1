@@ -2,6 +2,8 @@ package com.nanou.avocat.metier;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import com.nanou.avocat.DAO.IAvocatDAO;
 import com.nanou.avocat.entities.Avocat;
 import com.nanou.avocat.entities.Domaine;
@@ -12,7 +14,9 @@ import com.nanou.avocat.entities.Note;
 import com.nanou.avocat.entities.Utilisateur;
 import com.nanou.avocat.entities.Ville;
 
+@Transactional
 public class AvocatMetierImpl implements IAdminMetier{
+
 	
 	private IAvocatDAO dao;
 	
@@ -155,6 +159,30 @@ public class AvocatMetierImpl implements IAdminMetier{
 	public List<Domaine> listDomaine() {
 		// TODO Auto-generated method stub
 		return dao.listDomaine();
+	}
+
+	@Override
+	public List<Avocat> avocatParNomEtVille(String nom, String nomVille) {
+		
+		return dao.avocatParNomEtVille(nom, nomVille);
+	}
+
+	@Override
+	public List<Avocat> avocatParNomEtDomaine(String nom, String nomDomaine) {
+		
+		return dao.avocatParNomEtDomaine(nom, nomDomaine);
+	}
+
+	@Override
+	public List<Avocat> avocatParNomEtVilleEtDomaine(String nom, String nomVille, String nomDomaine) {
+		
+		return dao.avocatParNomEtVilleEtDomaine(nom, nomVille, nomDomaine);
+	}
+
+	@Override
+	public List<Avocat> avocatParVilleEtDomaine(String nomVille, String nomDomaine) {
+		
+		return dao.avocatParVilleEtDomaine(nomVille, nomDomaine);
 	}
 
 }

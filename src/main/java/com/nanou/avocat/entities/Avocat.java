@@ -6,11 +6,14 @@ import java.time.*;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 @Entity
 public class Avocat implements Serializable{
 	
 	
-	// manque photo et coordon�es
+	// manque photo et coordones
 	
    //information avocat
 	 @Id
@@ -30,9 +33,13 @@ public class Avocat implements Serializable{
 	private double noteGlobal;
 	 @OneToMany(mappedBy="avocat")
 	private List<Facture> listFacture;
-	 @ManyToMany(mappedBy="listAvocat")
+	 @ManyToMany
+	 @LazyCollection(LazyCollectionOption.FALSE)
+	 @JoinTable(joinColumns=@JoinColumn(name="idAvocat"), inverseJoinColumns=@JoinColumn(name="idLangue"))
 	private List<Langue> listLangue;
-	 @ManyToMany(mappedBy="listAvocat")
+	 @ManyToMany
+	 @LazyCollection(LazyCollectionOption.FALSE)
+	 @JoinTable(joinColumns=@JoinColumn(name="idAvocat"), inverseJoinColumns=@JoinColumn(name="idDomaine"))
 	private List<Domaine> listDomaine;
 	 @OneToMany(mappedBy="avocat")
 	private List<Horaire> listHoraire;
