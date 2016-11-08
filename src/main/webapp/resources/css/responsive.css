@@ -301,3 +301,21 @@
 
 }
 
+.nav1{
+	padding: 4px 0;
+}
+
+.lis{
+	padding-bottom: 15px;
+	font-size: 15px;
+}
+
+.alin{
+	line-height: 30px;
+}
+
+.slidee{
+	height: 530px !important;
+}
+
+
