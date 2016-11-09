@@ -10,7 +10,7 @@ public class Ville implements Serializable{
 	 @GeneratedValue(strategy=GenerationType.IDENTITY)
 	 private Long idVille;
 	 private String nomVille;
-	 @OneToMany(mappedBy="ville")
+	 @OneToMany(fetch = FetchType.EAGER, mappedBy="ville")
 	 private List<Avocat> listAvocat;
 
 	public String getNomVille() {

@@ -34,6 +34,13 @@ public class AvocatDaoImpl implements IAvocatDAO {
 	public void deleteAvocat(Long id) {
 		Avocat a=em.find(Avocat.class, id);
 		em.remove(a);
+		for (Domaine d : a.getListDomaine()) {
+		     d.getListAvocat().remove(a);
+		}
+		for (Langue L : a.getListLangue()) {
+		     L.getListAvocat().remove(a);
+		}
+		
 		
 	}
 
