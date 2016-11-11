@@ -18,6 +18,7 @@ public interface IAvocatDAO {
 	  public List<Avocat> avocatParNomEtVilleEtDomaine(String nom, String nomVille, String nomDomaine);
 	  public List<Avocat> avocatParVilleEtDomaine(String nomVille, String nomDomaine);
 	  public List<Avocat> listAvocat();
+	  public Avocat getAvocat(Long id);
 	  
 	  
 	  public Long ajouterUser(Utilisateur a);

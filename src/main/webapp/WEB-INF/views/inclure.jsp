@@ -17,7 +17,7 @@
     <link href="<c:url value="/resources/css/font-awesome.min.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/css/animate.min.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/css/prettyPhoto.css"/> rel="stylesheet">
-     <link href="<c:url value="/resources/css/main.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/css/main.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/css/responsive.css"/>" rel="stylesheet">
    
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Vollkorn" />

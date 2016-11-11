@@ -36,7 +36,10 @@ public class AvocatDaoImpl implements IAvocatDAO {
 		em.remove(a);
 		
 	}
-
+	public Avocat getAvocat(Long id){
+		Avocat a=em.find(Avocat.class, id);
+		return a;
+	}
 	@Override
 	public List<Avocat> avocatParVille(String nomVille) {
 		Query req=em.createQuery("select v.listAvocat from Ville v where v.nomVille=:x ");
