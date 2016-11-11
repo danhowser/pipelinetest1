@@ -6,8 +6,11 @@ import java.time.*;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 public class Avocat implements Serializable{
@@ -51,6 +54,9 @@ public class Avocat implements Serializable{
 	 @ManyToOne
 	 @JoinColumn(name="idVille")
 	private Ville ville;
+	 @Lob
+	 private byte[] photo;
+	 private String nomPhoto;
 	
 	//information utiles
 	private LocalDateTime derniereConnection;
@@ -190,6 +196,25 @@ public class Avocat implements Serializable{
 	public long getIdAvocat() {
 		return idAvocat;
 	}
+	
+	public double getNoteGlobal() {
+		return noteGlobal;
+	}
+	public void setNoteGlobal(double noteGlobal) {
+		this.noteGlobal = noteGlobal;
+	}
+	public byte[] getPhoto() {
+		return photo;
+	}
+	public void setPhoto(byte[] photo) {
+		this.photo = photo;
+	}
+	public String getNomPhoto() {
+		return nomPhoto;
+	}
+	public void setNomPhoto(String nomPhoto) {
+		this.nomPhoto = nomPhoto;
+	}
 	public Avocat() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -199,20 +224,20 @@ public class Avocat implements Serializable{
 		this.nomAvocat = nomAvocat;
 		// TODO Auto-generated constructor stub
 	}
-	public Avocat(String nomAvocat, String prenomAvocat, String adresseAvocat, String adresseAvocat2, String telCabinet,
-			String telPortableAvocat, String telAvocat2, String sexe, String diplome, LocalDate startedPractice,
-			String description, String motDePasse, String emailAvocat, Ville ville) {
+	public Avocat(String nomAvocat, String prenomAvocat, String adresseAvocat, String telCabinet,
+			String telPortableAvocat, String diplome,
+			String description, String motDePasse, String emailAvocat, byte[] photo, String nomPhoto) {
 		super();
 		this.nomAvocat = nomAvocat;
 		this.prenomAvocat = prenomAvocat;
 		this.adresseAvocat = adresseAvocat;
-		this.adresseAvocat2 = adresseAvocat2;
+	//	this.adresseAvocat2 = adresseAvocat2;
 		this.telCabinet = telCabinet;
 		this.telPortableAvocat = telPortableAvocat;
-		this.telAvocat2 = telAvocat2;
-		this.sexe = sexe;
+	//	this.telAvocat2 = telAvocat2;
+	//	this.sexe = sexe;
 		this.diplome = diplome;
-		this.startedPractice = startedPractice;
+	//	this.startedPractice = startedPractice;
 		this.description = description;
 		this.dateCreation = LocalDateTime.now();
 		this.motDePasse = motDePasse;
@@ -225,7 +250,9 @@ public class Avocat implements Serializable{
 		listHoraire=new ArrayList<Horaire>();
 		listMessage=new ArrayList<Message>();
 		listNote=new ArrayList<Note>();
-		this.ville=ville;
+	//	this.ville=ville;
+		this.photo=photo;
+		this.nomPhoto=nomPhoto;
 	}
 	public List<Facture> getListFacture() {
 		return listFacture;

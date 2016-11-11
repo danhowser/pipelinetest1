@@ -45,7 +45,7 @@ public class TestJPA {
 			Langue lann=metier.listLangue().get(1);
 			Langue lannn=metier.listLangue().get(2);
 			
-		/*	Avocat a1=new Avocat("gharibi","","","","","","","","",LocalDate.now(),"","","",kenitra);
+	/*	Avocat a1=new Avocat("gharibi","","","","","","","","",LocalDate.now(),"","","",kenitra);
 			List<Domaine> list1=new ArrayList<Domaine>(); list1.add(dom); list1.add(domm);
 			//List<Avocat> lista=new ArrayList<Avocat>(); lista.add(a1); 
 			a1.setListDomaine(list1);
@@ -94,10 +94,12 @@ public class TestJPA {
 		//		System.out.println(metier.listAvocat().get(0).getListDomaine().get(0).getNomDomaine());
 		//		System.out.println(metier.listAvocat().get(0).getListDomaine().get(1).getNomDomaine());    */
 			
-			Avocat a1=metier.listAvocat().get(0);
-			System.out.println(a1.getListLangue().get(1).getNomLangue());
+		//	Avocat a1=metier.listAvocat().get(0);
+		//	a1.setListDomaine(null);
+			//metier.updateAvocat(a1);
+		//	metier.deleteAvocat(a1.getIdAvocat());
 			
-			
+			System.out.println(metier.listVille().get(0).getListAvocat().get(0).getNomAvocat());
 			
 			}
 			catch(Exception e){
