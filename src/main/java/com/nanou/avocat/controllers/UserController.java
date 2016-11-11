@@ -25,9 +25,9 @@ public class UserController {
 	private IUserMetier metier;
 	@RequestMapping(value = "/index")
 	public String index(Model model){
-		model.addAttribute("villes", metier.listVille());
+		model.addAttribute("villeList", metier.listVille());
 		model.addAttribute("domaines", metier.listDomaine());
-		return "user";
+		return "home";
 	}
 	
 	@RequestMapping(value = "/ajoutAvocat")

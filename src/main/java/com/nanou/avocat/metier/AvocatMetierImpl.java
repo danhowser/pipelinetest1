@@ -184,5 +184,9 @@ public class AvocatMetierImpl implements IAdminMetier{
 		
 		return dao.avocatParVilleEtDomaine(nomVille, nomDomaine);
 	}
+	
+	public Avocat getAvocat(Long id){
+		return dao.getAvocat(id);
+	}
 
 }

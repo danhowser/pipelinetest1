@@ -10,7 +10,6 @@ import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.nanou.avocat.entities.*;
-import com.nanou.avocat.metier.IAdminMetier;
 import com.nanou.avocat.metier.*;
 import java.time.*;
 import java.util.List;
@@ -37,15 +36,20 @@ public class TestJPA {
 			Ville rabat=metier.listVille().get(1);
 			Ville casablanca=metier.listVille().get(2);
 			
-			Domaine dom=metier.listDomaine().get(0);
-			Domaine domm=metier.listDomaine().get(1);
-			Domaine dommm=metier.listDomaine().get(2); 
-			
-			Langue lan=metier.listLangue().get(0);
-			Langue lann=metier.listLangue().get(1);
-			Langue lannn=metier.listLangue().get(2);
-			
-	/*	Avocat a1=new Avocat("gharibi","","","","","","","","",LocalDate.now(),"","","",kenitra);
+
+
+//			Domaine dom=metier.listDomaine().get(0);
+//			Domaine domm=metier.listDomaine().get(1);
+//			Domaine dommm=metier.listDomaine().get(2); 
+//			
+//			Langue lan=metier.listLangue().get(0);
+//			Langue lann=metier.listLangue().get(1);
+//			Langue lannn=metier.listLangue().get(2);
+			System.out.println(kenitra.getNomVille());
+			System.out.println(rabat.getNomVille());
+			System.out.println(casablanca.getNomVille());
+		/*	Avocat a1=new Avocat("gharibi","","","","","","","","",LocalDate.now(),"","","",kenitra);
+>>>>>>> 4fb535bfb26676a5a320f4e9ffcf027e3f4bd5b1
 			List<Domaine> list1=new ArrayList<Domaine>(); list1.add(dom); list1.add(domm);
 			//List<Avocat> lista=new ArrayList<Avocat>(); lista.add(a1); 
 			a1.setListDomaine(list1);
@@ -94,10 +98,11 @@ public class TestJPA {
 		//		System.out.println(metier.listAvocat().get(0).getListDomaine().get(0).getNomDomaine());
 		//		System.out.println(metier.listAvocat().get(0).getListDomaine().get(1).getNomDomaine());    */
 			
-		//	Avocat a1=metier.listAvocat().get(0);
-		//	a1.setListDomaine(null);
-			//metier.updateAvocat(a1);
-		//	metier.deleteAvocat(a1.getIdAvocat());
+
+//			Avocat a1=metier.listAvocat().get(0);
+//			System.out.println(a1.getListLangue().get(1).getNomLangue());
+			
+
 			
 			System.out.println(metier.listVille().get(0).getListAvocat().get(0).getNomAvocat());
 			

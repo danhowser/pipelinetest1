@@ -1,97 +1,20 @@
 
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>	
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Home | Corlate</title>
-	
-	<!-- core CSS -->
-	
-    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="resources/css/font-awesome.min.css" rel="stylesheet">
-    <link href="resources/css/animate.min.css" rel="stylesheet">
-    <link href="resources/css/prettyPhoto.css" rel="stylesheet">
-    <link href="resources/css/responsive.css" rel="stylesheet">
-    <link href="resources/css/main.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Vollkorn" />
-    
-    <!--[if lt IE 9]>
-    <script src="<c:url value="/resourcesjs/html5shiv.js"/>" ></script>
-    <script src="<c:url value="/resourcesjs/respond.min.js"/>"></script>
-    <![endif]-->       
-    <link rel="shortcut icon" href="<c:url value="/resources/images/ico/favicon.ico"/>">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<c:url value="/resources/images/ico/apple-touch-icon-144-precomposed.png"/>">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<c:url value="/resources/images/ico/apple-touch-icon-114-precomposed.png"/>">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<c:url value="/resources/images/ico/apple-touch-icon-72-precomposed.png"/>">
-    <link rel="apple-touch-icon-precomposed" href="<c:url value="/resources/images/ico/apple-touch-icon-57-precomposed.png"/>">
-</head><!--/head-->
-
-<body class="homepage">
-
-    <header id="header">
-        <nav class="navbar navbar-inverse nav1" role="banner">
-
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.html"><img src="<c:url value="/resources/images/logo.png"/>" alt="logo"></a>
-                </div>
-				
-                <div class="collapse navbar-collapse navbar-right">
-                    <ul class="nav navbar-nav">
-
-                        <li class="active lis" style="font-size:15 px"><a href="index.html">Home</a></li>
-                        <li style="font-size:15 px"><a class="alin" href="about-us.html">About Us</a></li>
-                        <li style="font-size:15 px"><a class="alin" href="services.html">Services</a></li>
-                        <li style="font-size:15 px"><a class="alin" href="portfolio.html">Portfolio</a></li>
-                        <li class="dropdown" style="font-size:15 px">
-
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="blog-item.html">Blog Single</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="404.html">404</a></li>
-                                <li><a href="shortcodes.html">Shortcodes</a></li>
-                            </ul>
-                        </li>
-
-                        <li style="font-size:15 px"><a href="blog.html">Blog</a></li> 
-                        <li style="font-size:15 px"><a href="contact-us.html">Contact</a></li>                        
-
-
-                    </ul>
-                </div>
-            </div><!--/.container-->
-        </nav><!--/nav-->
-		
-    </header><!--/header-->
+<%@include file="inclure.jsp" %>
 
     <section id="main-slider" class="no-margin">
-        <div class="carousel slide">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#main-slider" data-slide-to="0" class="active"></li>
                 <li data-target="#main-slider" data-slide-to="1"></li>
                 <li data-target="#main-slider" data-slide-to="2"></li>
             </ol>
 
-            <div class="carousel-inner slidee" >
+            <div class="carousel-inner slidee" role="listbox" >
+
 
                 <div class="item active" style="background-image: url(<c:url value="/resources/images/slider/bg1.jpg"/>)">
-                    <div class="container">
-                        <div class="row slide-margin">
+                    <div class="carousel-caption">
+                        <div >
 
 
                         </div>
@@ -100,8 +23,8 @@
 
 
                 <div class="item" style="background-image: url(<c:url value="/resources/images/slider/bg2.jpg"/>)">
-                    <div class="container">
-                        <div class="row slide-margin">
+                    <div class="carousel-caption">
+                        <div >
                            
 
 
@@ -111,8 +34,8 @@
 
 
                 <div class="item" style="background-image: url(<c:url value="/resources/images/slider/bg3.jpg"/>)">
-                    <div class="container">
-                        <div class="row slide-margin">
+                    <div class="carousel-caption">
+                        <div >
                             
 
                         </div>
@@ -127,10 +50,37 @@
             <i class="fa fa-chevron-right"></i>
         </a>
 
-        <div style="position: absolute; left: 0; top: 30%; width: 100%; text-align: center; z-index:90000000000;font-family: vollkorn; font-size: 5vw; color:white;">
+        <div style="position: absolute; left: 0; top: 30%; width: 100%; text-align: center; z-index:900;font-family: vollkorn; font-size: 5vw; color:white;">
                                    Trouvez l'avocat qui vous convient                      
         </div>
-        
+        <div style="position: absolute; left: 0; top: 55%; width: 100%; text-align: center; z-index:900;">
+        	<div class="container" >
+        	<div class="row boite" >
+        	<f:form class="form-inline search-container form-inputs" action="chercher" method="get" >
+        	<div class="form-group col-md-3 col-lg-3 col-xs-12 col-sm-12" style="margin: 3px 0 3px 0; padding: 5px;">
+			<input type="text" name="nom" class="form-control" placeholder="Avocat" style="width: 100%; height:46px; font-size: 15px; background-color: rgb(240,240,240);"/>
+			</div>
+        	<div class="form-group col-md-3 col-lg-3 col-xs-12 col-sm-12" style="margin: 3px 0 3px 0; padding: 5px;">
+  			<select name="ville" class="form-control selectpicker" data-live-search="true" data-title="Choisir Ville" data-style="input-lg" style="background-color: white;">
+    			<c:forEach var="ville" items="${villeList}" >
+        			<option> <c:out value="${ville.nomVille}"></c:out></option>
+   				</c:forEach>
+			</select>
+			</div>
+			<div class="form-group col-md-3 col-lg-3 col-xs-12 col-sm-12" style="margin: 3px 0 3px 0; padding: 5px;">
+			<select name="domaine" class="form-control selectpicker" data-live-search="true" data-title="Choisir Domaine" data-style="input-lg" >
+    			<c:forEach var="domaine" items="${domaineList}" >
+        			<option> <c:out value="${domaine.nomDomaine}"></c:out></option>
+   				</c:forEach>
+			</select> 
+			</div>
+			<div class="form-group col-md-3 col-lg-3 col-xs-12 col-sm-12" style="margin: 3px 0 3px 0 ;padding: 5px;">
+			<input type="submit" class="btn bouton" value="chercher" style="width: 100%; height:46px; font-family: vollkorn; font-size: 20px;"/>     
+			</div>             
+			</f:form>           
+			</div>
+			</div>                
+        </div>	
 
     </section><!--/#main-slider-->
 
@@ -987,6 +937,7 @@
     <script src="<c:url value="/resources/js/jquery.isotope.min.js"/>"></script>
     <script src="<c:url value="/resources/js/main.js"/>"></script>
     <script src="<c:url value="/resources/js/wow.min.js"/>"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/bootstrap-select.min.js"></script>
 </body>
 
 </html>
