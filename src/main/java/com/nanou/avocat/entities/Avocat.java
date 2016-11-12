@@ -51,6 +51,9 @@ public class Avocat implements Serializable{
 	 @ManyToOne
 	 @JoinColumn(name="idVille")
 	private Ville ville;
+	 @Lob
+	 private byte[] photo;
+	 private String nomPhoto;
 	
 	//information utiles
 	private LocalDateTime derniereConnection;
@@ -201,7 +204,7 @@ public class Avocat implements Serializable{
 	}
 	public Avocat(String nomAvocat, String prenomAvocat, String adresseAvocat, String adresseAvocat2, String telCabinet,
 			String telPortableAvocat, String telAvocat2, String sexe, String diplome, LocalDate startedPractice,
-			String description, String motDePasse, String emailAvocat, Ville ville) {
+			String description, String motDePasse, String emailAvocat, Ville ville, byte[] photo, String nomPhoto) {
 		super();
 		this.nomAvocat = nomAvocat;
 		this.prenomAvocat = prenomAvocat;
@@ -226,6 +229,8 @@ public class Avocat implements Serializable{
 		listMessage=new ArrayList<Message>();
 		listNote=new ArrayList<Note>();
 		this.ville=ville;
+		this.photo=photo;
+		this.nomPhoto=nomPhoto;
 	}
 	public List<Facture> getListFacture() {
 		return listFacture;
@@ -268,6 +273,24 @@ public class Avocat implements Serializable{
 	}
 	public void setVille(Ville ville) {
 		this.ville = ville;
+	}
+	public double getNoteGlobal() {
+		return noteGlobal;
+	}
+	public void setNoteGlobal(double noteGlobal) {
+		this.noteGlobal = noteGlobal;
+	}
+	public byte[] getPhoto() {
+		return photo;
+	}
+	public void setPhoto(byte[] photo) {
+		this.photo = photo;
+	}
+	public String getNomPhoto() {
+		return nomPhoto;
+	}
+	public void setNomPhoto(String nomPhoto) {
+		this.nomPhoto = nomPhoto;
 	}
 	
 	
