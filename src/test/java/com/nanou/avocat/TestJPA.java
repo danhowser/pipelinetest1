@@ -32,9 +32,9 @@ public class TestJPA {
 			assertTrue(use1.size()+2==use2.size()); */
 			
 
-			Ville kenitra=metier.listVille().get(0);
-			Ville rabat=metier.listVille().get(1);
-			Ville casablanca=metier.listVille().get(2);
+//			Ville kenitra=metier.listVille().get(0);
+//			Ville rabat=metier.listVille().get(1);
+//			Ville casablanca=metier.listVille().get(2);
 			
 //			Domaine dom=metier.listDomaine().get(0);
 //			Domaine domm=metier.listDomaine().get(1);
@@ -43,9 +43,9 @@ public class TestJPA {
 //			Langue lan=metier.listLangue().get(0);
 //			Langue lann=metier.listLangue().get(1);
 //			Langue lannn=metier.listLangue().get(2);
-			System.out.println(kenitra.getNomVille());
-			System.out.println(rabat.getNomVille());
-			System.out.println(casablanca.getNomVille());
+//			System.out.println(kenitra.getNomVille());
+//			System.out.println(rabat.getNomVille());
+//			System.out.println(casablanca.getNomVille());
 		/*	Avocat a1=new Avocat("gharibi","","","","","","","","",LocalDate.now(),"","","",kenitra);
 			List<Domaine> list1=new ArrayList<Domaine>(); list1.add(dom); list1.add(domm);
 			//List<Avocat> lista=new ArrayList<Avocat>(); lista.add(a1); 

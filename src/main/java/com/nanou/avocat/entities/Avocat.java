@@ -6,8 +6,11 @@ import java.time.*;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 public class Avocat implements Serializable{
@@ -28,9 +31,11 @@ public class Avocat implements Serializable{
 	private String telAvocat2;
 	private String sexe;
 	private String diplome;
-	private LocalDate startedPractice;
+	private String startedPractice;
 	private String description;
 	private double noteGlobal;
+	private double latitude;
+	private double longitude;
 	 @OneToMany(mappedBy="avocat")
 	private List<Facture> listFacture;
 	 @ManyToMany
@@ -124,10 +129,10 @@ public class Avocat implements Serializable{
 	public void setDiplome(String diplome) {
 		this.diplome = diplome;
 	}
-	public LocalDate getStartedPractice() {
+	public String getStartedPractice() {
 		return startedPractice;
 	}
-	public void setStartedPractice(LocalDate startedPractice) {
+	public void setStartedPractice(String startedPractice) {
 		this.startedPractice = startedPractice;
 	}
 	public String getDescription() {
@@ -193,6 +198,25 @@ public class Avocat implements Serializable{
 	public long getIdAvocat() {
 		return idAvocat;
 	}
+	
+	public double getNoteGlobal() {
+		return noteGlobal;
+	}
+	public void setNoteGlobal(double noteGlobal) {
+		this.noteGlobal = noteGlobal;
+	}
+	public byte[] getPhoto() {
+		return photo;
+	}
+	public void setPhoto(byte[] photo) {
+		this.photo = photo;
+	}
+	public String getNomPhoto() {
+		return nomPhoto;
+	}
+	public void setNomPhoto(String nomPhoto) {
+		this.nomPhoto = nomPhoto;
+	}
 	public Avocat() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -202,18 +226,18 @@ public class Avocat implements Serializable{
 		this.nomAvocat = nomAvocat;
 		// TODO Auto-generated constructor stub
 	}
-	public Avocat(String nomAvocat, String prenomAvocat, String adresseAvocat, String adresseAvocat2, String telCabinet,
-			String telPortableAvocat, String telAvocat2, String sexe, String diplome, LocalDate startedPractice,
-			String description, String motDePasse, String emailAvocat, Ville ville, byte[] photo, String nomPhoto) {
+	public Avocat(String nomAvocat, String prenomAvocat, String adresseAvocat, String telCabinet,
+			String telPortableAvocat, String diplome,
+			String description, String motDePasse, String emailAvocat, String startedPractice, byte[] photo, String nomPhoto, double latitude, double longitude) {
 		super();
 		this.nomAvocat = nomAvocat;
 		this.prenomAvocat = prenomAvocat;
 		this.adresseAvocat = adresseAvocat;
-		this.adresseAvocat2 = adresseAvocat2;
+	//	this.adresseAvocat2 = adresseAvocat2;
 		this.telCabinet = telCabinet;
 		this.telPortableAvocat = telPortableAvocat;
-		this.telAvocat2 = telAvocat2;
-		this.sexe = sexe;
+	//	this.telAvocat2 = telAvocat2;
+	//	this.sexe = sexe;
 		this.diplome = diplome;
 		this.startedPractice = startedPractice;
 		this.description = description;
@@ -228,9 +252,11 @@ public class Avocat implements Serializable{
 		listHoraire=new ArrayList<Horaire>();
 		listMessage=new ArrayList<Message>();
 		listNote=new ArrayList<Note>();
-		this.ville=ville;
+	//	this.ville=ville;
 		this.photo=photo;
 		this.nomPhoto=nomPhoto;
+		this.latitude=latitude;
+		this.longitude=longitude;
 	}
 	public List<Facture> getListFacture() {
 		return listFacture;
@@ -274,34 +300,17 @@ public class Avocat implements Serializable{
 	public void setVille(Ville ville) {
 		this.ville = ville;
 	}
-	public double getNoteGlobal() {
-		return noteGlobal;
+	public double getLatitude() {
+		return latitude;
 	}
-	public void setNoteGlobal(double noteGlobal) {
-		this.noteGlobal = noteGlobal;
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
 	}
-	public byte[] getPhoto() {
-		return photo;
+	public double getLongitude() {
+		return longitude;
 	}
-	public void setPhoto(byte[] photo) {
-		this.photo = photo;
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
 	}
-	public String getNomPhoto() {
-		return nomPhoto;
-	}
-	public void setNomPhoto(String nomPhoto) {
-		this.nomPhoto = nomPhoto;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 }
